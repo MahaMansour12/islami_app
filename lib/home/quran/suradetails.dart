@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:islamii/home/quran/sura_contant.dart';
 
 //import 'package:islamii/home/quran/Sura_widgt.dart';
 
 import '../../Mythem.dart';
 
-class Sura_detsils extends StatelessWidget {
+class Sura_detsils extends StatefulWidget {
   static const String routName = "Sura_details";
+
+  @override
+  State<Sura_detsils> createState() => _Sura_detsilsState();
+}
+
+class _Sura_detsilsState extends State<Sura_detsils> {
+  List<String> lines = [];
 
   @override
   Widget build(BuildContext context) {
     SuraDetailsArg sura =
         ModalRoute.of(context)?.settings.arguments as SuraDetailsArg;
+    if (lines.isEmpty) {
+      loadFiles(sura.index);
+    }
     return Container(
         width: double.infinity,
         height: double.infinity,
@@ -19,12 +31,45 @@ class Sura_detsils extends StatelessWidget {
               DecorationImage(image: AssetImage("asstes/imges/background.png")),
         ),
         child: Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            title:
-                Text(sura.name, style: Mytheme.lighttheme.textTheme.headline2),
-          ),
-        ));
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text(sura.name,
+                  style: Mytheme.lighttheme.textTheme.headline2),
+            ),
+            body: Card(
+              margin: EdgeInsets.only(top: 80, bottom: 30, right: 20, left: 20),
+              elevation: 0,
+              color: Mytheme.wihteColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40)),
+              child: ListView.separated(
+                  itemBuilder: (context, index) {
+                    return sura_contant(
+                      versesContant: lines[index],
+                      numberVerses: index + 1,
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Divider(
+                        height: 2,
+                        color: Theme.of(context).primaryColor,
+                        thickness: 1,
+                      ),
+                    );
+                  },
+                  itemCount: lines.length),
+            )));
+  }
+
+  void loadFiles(int fileIndex) async {
+    String contnt =
+        await rootBundle.loadString("asstes/files/${fileIndex}.txt");
+    List<String> line = contnt.trim().split("\n");
+    setState(() {
+      lines = line;
+    });
   }
 }
 
