@@ -4,6 +4,7 @@ import 'package:islamii/home/home_screen.dart';
 
 //import 'package:islamii/home/quran/quran_tap.dart';
 
+import 'home/hadith/contanthadith.dart';
 import 'home/quran/suradetails.dart';
 
 void main() {
@@ -18,9 +19,11 @@ class islami_app extends StatelessWidget {
       routes: {
         home_screen.routName: (_) => home_screen(),
         Sura_detsils.routName: (_) => Sura_detsils(),
+        Contant_Hadith.routNme: (_) => Contant_Hadith()
       },
       initialRoute: home_screen.routName,
-      theme: Mytheme.lighttheme,
+      theme: Mytheme.darkTheme,
+      themeMode: ThemeMode.dark,
     );
   }
 }

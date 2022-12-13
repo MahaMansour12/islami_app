@@ -21,7 +21,7 @@ class quran_Tap extends StatelessWidget {
           ),
           Text(
             'SuraName',
-            style: TextStyle(fontSize: 15),
+            style: Theme.of(context).textTheme.headline5,
             textAlign: TextAlign.center,
           ),
           SizedBox(

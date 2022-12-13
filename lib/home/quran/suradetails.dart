@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamii/home/quran/sura_contant.dart';
 
-//import 'package:islamii/home/quran/Sura_widgt.dart';
-
-import '../../Mythem.dart';
-
 class Sura_detsils extends StatefulWidget {
   static const String routName = "Sura_details";
 
@@ -33,13 +29,13 @@ class _Sura_detsilsState extends State<Sura_detsils> {
         child: Scaffold(
             appBar: AppBar(
               centerTitle: true,
-              title: Text(sura.name,
-                  style: Mytheme.lighttheme.textTheme.headline2),
+              title:
+                  Text(sura.name, style: Theme.of(context).textTheme.headline6),
             ),
             body: Card(
               margin: EdgeInsets.only(top: 80, bottom: 30, right: 20, left: 20),
               elevation: 0,
-              color: Mytheme.wihteColor,
+              color: Theme.of(context).cardColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40)),
               child: ListView.separated(
@@ -65,7 +61,7 @@ class _Sura_detsilsState extends State<Sura_detsils> {
 
   void loadFiles(int fileIndex) async {
     String contnt =
-        await rootBundle.loadString("asstes/files/${fileIndex}.txt");
+        await rootBundle.loadString("asstes/files/${fileIndex + 1}.txt");
     List<String> line = contnt.trim().split("\n");
     setState(() {
       lines = line;

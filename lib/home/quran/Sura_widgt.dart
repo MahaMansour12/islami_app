@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islamii/Mythem.dart';
 import 'package:islamii/home/quran/suradetails.dart';
 
 class sura_Name_widgt extends StatelessWidget {
@@ -17,10 +16,7 @@ class sura_Name_widgt extends StatelessWidget {
         },
         child: Text(
           title,
-          style: TextStyle(
-            color: Mytheme.blackColor,
-            fontSize: 20,
-          ),
+          style: Theme.of(context).textTheme.headline6,
           textAlign: TextAlign.center,
         ));
   }

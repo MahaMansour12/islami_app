@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islamii/Mythem.dart';
 
 class sura_contant extends StatelessWidget {
   String versesContant;
@@ -11,13 +10,10 @@ class sura_contant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
-      child: Text(
-        "$versesContant ($numberVerses)",
-        textAlign: TextAlign.center,
-        textDirection: TextDirection.rtl,
-        style: TextStyle(color: Mytheme.blackColor, fontSize: 20),
-      ),
-    );
+        margin: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+        child: Text("$versesContant ($numberVerses)",
+            textAlign: TextAlign.center,
+            textDirection: TextDirection.rtl,
+            style: Theme.of(context).textTheme.subtitle2));
   }
 }

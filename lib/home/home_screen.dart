@@ -32,7 +32,9 @@ class _home_screenState extends State<home_screen> {
             ),
             body: Taps[selextindex],
             bottomNavigationBar: Theme(
-              data: Theme.of(context).copyWith(canvasColor: Mytheme.primeLigth),
+              data: Theme.of(context).copyWith(
+                canvasColor: Theme.of(context).primaryColor,
+              ),
               child: InkWell(
                 child: BottomNavigationBar(
                   currentIndex: selextindex,
