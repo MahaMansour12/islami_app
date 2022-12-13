@@ -22,7 +22,7 @@ class islami_app extends StatelessWidget {
         Contant_Hadith.routNme: (_) => Contant_Hadith()
       },
       initialRoute: home_screen.routName,
-      theme: Mytheme.darkTheme,
+      theme: Mytheme.lighttheme,
       themeMode: ThemeMode.dark,
     );
   }

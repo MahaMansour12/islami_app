@@ -7,38 +7,52 @@ class Mytheme {
   static const Color blackColor = Color(0xff242424);
   static const Color yollowColor = Color(0xffFACC1D);
   static ThemeData lighttheme = ThemeData(
-      cardColor: wihteColor,
-      accentColor: primeLigth,
-      primaryColor: primeLigth,
-      appBarTheme: AppBarTheme(
-        iconTheme: IconThemeData(color: blackColor),
-        color: Colors.transparent,
-        elevation: 0,
+    bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: wihteColor,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+          topRight: Radius.circular(20),
+          topLeft: Radius.circular(20),
+        ))),
+    cardColor: wihteColor,
+    accentColor: primeLigth,
+    primaryColor: primeLigth,
+    appBarTheme: AppBarTheme(
+      iconTheme: IconThemeData(color: blackColor),
+      color: Colors.transparent,
+      elevation: 0,
+    ),
+    scaffoldBackgroundColor: Colors.transparent,
+    textTheme: TextTheme(
+      headline6: TextStyle(
+        color: blackColor,
+        fontWeight: FontWeight.w600,
       ),
-      scaffoldBackgroundColor: Colors.transparent,
-      textTheme: TextTheme(
-        headline6: TextStyle(
-          color: blackColor,
-          fontWeight: FontWeight.w600,
-        ),
-        headline5: TextStyle(
-          color: blackColor,
-          fontWeight: FontWeight.w600,
-        ),
-        subtitle2: TextStyle(
-          color: blackColor,
-          fontWeight: FontWeight.w600,
-        ),
+      headline5: TextStyle(
+        color: blackColor,
+        fontWeight: FontWeight.w600,
       ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedIconTheme: IconThemeData(size: 35),
-        selectedLabelStyle: TextStyle(color: blackColor),
-        selectedItemColor: blackColor,
-        unselectedItemColor: wihteColor,
-        showUnselectedLabels: false,
-        showSelectedLabels: true,
-      ));
+      subtitle2: TextStyle(
+        color: blackColor,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedIconTheme: IconThemeData(size: 35),
+      selectedLabelStyle: TextStyle(color: blackColor),
+      selectedItemColor: blackColor,
+      unselectedItemColor: wihteColor,
+      showUnselectedLabels: false,
+      showSelectedLabels: true,
+    ),
+  );
   static ThemeData darkTheme = ThemeData(
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: primeDark,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20), topLeft: Radius.circular(20))),
+      ),
       cardColor: primeDark,
       accentColor: yollowColor,
       primaryColor: primeDark,
@@ -50,9 +64,7 @@ class Mytheme {
       scaffoldBackgroundColor: Colors.transparent,
       textTheme: TextTheme(
         headline6: TextStyle(
-          color: wihteColor,
-          fontWeight: FontWeight.w600,
-        ),
+            color: wihteColor, fontWeight: FontWeight.w600, fontSize: 20),
         headline5: TextStyle(
           color: wihteColor,
           fontWeight: FontWeight.w600,

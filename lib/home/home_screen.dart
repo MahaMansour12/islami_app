@@ -4,6 +4,7 @@ import 'package:islamii/home/hadith/hadith.dart';
 import 'package:islamii/home/quran/quran_tap.dart';
 import 'package:islamii/home/radio/radio.dart';
 import 'package:islamii/home/sebha/sebha.dart';
+import 'package:islamii/home/setting/setting_tap.dart';
 
 class home_screen extends StatefulWidget {
   static const String routName = "home_screen";
@@ -69,6 +70,10 @@ class _home_screenState extends State<home_screen> {
                         AssetImage('asstes/imges/radio.png'),
                       ),
                       label: "Radio",
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.settings),
+                      label: "Settings",
                     )
                   ],
                 ),
@@ -81,5 +86,6 @@ class _home_screenState extends State<home_screen> {
     hadith_Tap(),
     sebha_Tap(),
     raduo_Tap(),
+    setting_tap(),
   ];
 }
